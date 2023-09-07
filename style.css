@@ -1,0 +1,91 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(158, 158, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.panel{
+    width: 80%;
+    height: 80%;
+    background-color: #ffffff;
+    border-radius:10px ;
+    overflow: hidden;
+}
+.panel-top{
+    width: 100%;
+    height: 80px;
+    background-color:rgb(255 212 0);
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 25%;
+    align-items: center;
+}
+.box{
+    padding: 10px 20px;
+    border-radius:10px;
+    background-color: rgb(228 255 0);
+    overflow: hidden;
+    border: 2px solid black;
+    margin: 3px;
+
+
+    
+}
+.element{
+    display: flex;
+    align-items: center;
+    
+}
+.panel-bottom{
+    background-color: #f798f9;
+    width: 100%;
+    height: calc(100% - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.bubble{
+    margin-top: 10px ;
+    width: 50px;
+    height : 50px;
+    border-radius: 50%;
+    background-color:#fff8a5   ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+}
+.bubble:hover{
+    background-color: #259400;
+    cursor: pointer;
+}
+h1{
+    color: rgb(0, 0, 0);
+}
+.panel-message{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #c20091;
+    color: #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
