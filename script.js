@@ -1,75 +1,73 @@
 var timer = 10;
-var randomTarget = 0;
+var Target = 0;
 var score = 0;
+const scoreReal = document.getElementById("score");
+const panelMsg = document.getElementById("pannel-message")
+const gameBody = document.getElementById('game-body');
+
+function makeBubble(){
+    var bubbles = "";
+    for(var i = 0; i<70; i++){
+        var randomNum =  Math.ceil(Math.random()*9);
+        bubbles += `<div class="bubble"> <span>${randomNum}</span> </div>` ;
+    }
+    gameBody.innerHTML = bubbles;
+
+}
+
 function increaseScore(){
     score += 5;
-    document.getElementById("score-val").textContent = score;
+    scoreReal.textContent = Number(score);
 }
+
 function decreaseScore(){
     score -= 5;
-    document.getElementById("score-val").textContent = score;
-}
-
-function getNewTarget(){
-    randomTarget = Math.floor(Math.random()*10);
-    document.getElementById("target-val").textContent = randomTarget;
-}
-
-function bubblemaker(){
-var clutter = "";
-for(var i = 1; i<109; i++){
-    var rn =  Math.floor(Math.random()*10);
-    clutter += `<div class="bubble">${rn}</div>` ;
-}
-
-document.querySelector(".panel-bottom").innerHTML = clutter;
+    scoreReal.textContent = Number(score);
+    timer -= 3;
 }
 
 
 function runTimer(){
-  var timerInt = setInterval(function () {
-        if(timer>0){
-            timer--;
-            document.getElementById("timer-val").textContent = Number(timer);
-        }
-        else{
-            clearInterval(timerInt);
-            document.getElementById("pbtm").innerHTML = `<h1>Game Over</h1>`;
-        }
-    }, 1000);
+    var timerInt = setInterval(function () {
+          if(timer>0){
+              timer--;
+              document.getElementById("time").textContent = Number(timer);
+          }
+          else{
+              clearInterval(timerInt);
+              gameBody.innerHTML = `<h1>Game Over</h1>`;
+          }
+      }, 1000);
+  
+  }
 
+function getNewTarget(){
+    randomTarget = Math.ceil(Math.random()*9);
+    document.getElementById("target").textContent = Number(randomTarget);
 }
 
 
-        document.getElementById("pbtm").addEventListener("click",function(e){
-         var userInput = Number(e.target.textContent);
-         
-         if(userInput === randomTarget){
-            increaseScore();
-            getNewTarget();
-            bubblemaker();
-            timer += 10;
-            document.getElementById("hello").innerText ="++++GOOD++++"
-           
-        }
-        else{
-            document.getElementById("hello").innerText ="please enter valid number"
-            decreaseScore();
-        }
 
-    }) 
-   
-    
+gameBody.addEventListener("click",function(e){
+    var userInput = Number(e.target.textContent);
+    console.log(userInput)
+    if(userInput === randomTarget){
+       increaseScore();
+       getNewTarget();
+       makeBubble();
+       timer += 10;
+       document.getElementById("guidlines").innerText ="++++GOOD++++"
+       panelMsg.style.background = "#5fff3f";
+   }
+   else{
+       document.getElementById("guidlines").innerText ="please enter valid number";
+       panelMsg.style.background = "#ff0c0c"
+       decreaseScore();
+   }
 
-    
-
-
+}) 
 
 runTimer();
-bubblemaker();
+makeBubble();
 getNewTarget();
-
-
-
-
 
