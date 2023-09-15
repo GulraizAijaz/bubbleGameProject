@@ -3,36 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bubbles game</title>
+    <title>bubble game</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="panel-message">
-        <h1 id="hello"></h1>
-    </div>
     <div class="main">
-        <div class="panel">
-            <div class="panel-top">
-                <div class="element">
-                    <h4>target</h4>
-                    <div id="target-val" class="box">0</div>
+            <div id="pannel-message" class="pannel-message">
+                <h1 id="guidlines">
+                    Look at the target value and choose the same value from bottom
+                </h1>
+            </div>
+        <div class="game">
+            <div class="game-header">
+                <div  class="header-boxes">
+                    <span>target:</span>
+                    <span id="target"></span>
                 </div>
-                <div class="element">
-                    <h4>time rem</h4>
-                    <div id="timer-val" class="box">0</div>
+                <div  class="header-boxes">
+                    <span>time:</span>
+                    <span id="time"></span>
                 </div>
-                <div class="element">
-                    <h4>score</h4>
-                    <div id="score-val" class="box">0</div>
+                <div  class="header-boxes">
+                    <span>score:</span>
+                    <span id="score"></span>
                 </div>
             </div>
-            <div id="pbtm"  class="panel-bottom">
+            <div id="game-body" class="game-body">
                 
+               
+           
+              
             </div>
         </div>
-        
+
     </div>
-    
     <script src="./script.js"></script>
 </body>
 </html>
